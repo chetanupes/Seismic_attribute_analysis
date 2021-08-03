@@ -130,7 +130,7 @@ if Select_Method!='Mean Shift':
     kmean_image2=Image.open('KMean-Auto.png')
     st.image(kmean_image2, width=None)
     #st.markdown("<h1 style='text-align: center; color: red;'>Optimal number of clusters calculated=5</h1>", unsafe_allow_html=True)
-    st.write('*Optimal number of clusters calculated=5*')
+    #st.write('*Optimal number of clusters calculated=5*')
 
     # Plot!
     gmm_image=Image.open('Sil Plot-GMM.png')
