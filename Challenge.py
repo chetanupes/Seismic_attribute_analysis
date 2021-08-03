@@ -109,14 +109,14 @@ if Select_Method!='Mean Shift':
     st.write('**2. Silhouette Method**')
     st.write('The silhouette coefficient is a measure of how similar a data point is within-cluster (cohesion) compared to other clusters (separation).')
     st.latex(r'''S(i)=\left(\frac{b(i)-a(i)}{max(a(i),b(i))}\right)''')
-    st.write('**a)** S(i) is the silhouette coefficient of the data point i.')
-    st.write('**b)** a(i) is the average distance between i and all the other data points in the cluster to which i belongs.')
-    st.write('**c)** b(i) is the average distance from i to all clusters to which i does not belong.')
+    st.write('**a)** *S(i)* is the silhouette coefficient of the data point *i*.')
+    st.write('**b)** *a(i)* is the average distance between *i* and all the other data points in the cluster to which *i* belongs.')
+    st.write('**c)** *b(i)* is the average distance from *i* to all clusters to which *i* does not belong.')
 
     if Select_cluster=='Manually':
         cluster_value = st.sidebar.slider('Select a cluster value',2, 10, value=3)
     if Select_cluster=='Optimal clusters (calculated)':
-        st.sidebar.write('The optimal number of clusters found are 5')
+        st.sidebar.write('Optimal number of clusters calculated are 5.')
 
     # Plot!
     kmean_image=Image.open('KMean-Manually.png')
