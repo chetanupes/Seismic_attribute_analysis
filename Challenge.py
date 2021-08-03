@@ -46,10 +46,10 @@ from sklearn.cluster import MeanShift, estimate_bandwidth
 
 st.title('Geological Formation Identification Using Seismic Attributes')
 
-st.write('This project uses KMeans, GMM(Gaussian Mixture Modelling) and Mean Shift algorithms for identifying geological formation uisng seismic attributes.')
+st.write('This project uses KMeans, GMM(Gaussian Mixture Modelling) and Mean Shift algorithms for identifying geological formation using seismic attributes.')
 st.write('1. **K-means** clustering is a distance-based algorithm (Euclidean Distance or the Manhattan Distance). This means that it tries to group the closest points to form a cluster. It is used to group data into K number of clusters by minimising the distance between the data point and the centroid.')
-st.write('2. **Gaussian Mixture Models (GMMs)** assume that there are a certain number of Gaussian distributions, and each of these distributions represent a cluster. Hence, a Gaussian Mixture Model tends to group the data points belonging to a single distribution together.The GMM method also allows data points to be clustered, except that it accounts for data variance, results in a softer classification, and rather than being distance-based it is distribution-based.')
-st.write('3. **Mean Shift** looks at the “mode” of the density, and where it is highest, it will iteratively shift points in the plot towards the closest mode – resulting in a number of clusters.This way, even when the clusters aren’t perfectly separated, Mean Shift will likely be able to detect them anyway.')
+st.write('2. **Gaussian Mixture Models (GMMs)** assume that there are a certain number of Gaussian distributions, and each of these distributions represent a cluster. Hence, a Gaussian Mixture Model tends to group the data points belonging to a single distribution together. The GMM method also allows data points to be clustered, except that it accounts for data variance, results in a softer classification, and rather than being distance-based it is distribution-based.')
+st.write('3. **Mean Shift** looks at the “mode” of the density, and where it is highest, it will iteratively shift points in the plot towards the closest mode – resulting in a number of clusters. This way, even when the clusters aren’t perfectly separated, Mean Shift will likely be able to detect them anyway.')
 
 
 st.title('Dataset Report')
@@ -92,7 +92,7 @@ Select_Method=st.sidebar.selectbox('Select a Model', ('KMeans','GMM (Gaussian Mi
 #Cluster 
 st.sidebar.markdown("# Selecting Clusters")
 if Select_Method=='Mean Shift':
-    st.sidebar.write('For Mean shift clusters are selected automatically by the algorithm')
+    st.sidebar.write('For Mean Shift clusters are selected automatically by the algorithm.')
 else:
     Select_cluster=st.sidebar.selectbox('Select clusters', ('Manually','Optimal clusters (calculated)'))
 
@@ -115,7 +115,7 @@ if Select_Method!='Mean Shift':
 
     if Select_cluster=='Manually':
         cluster_value = st.sidebar.slider('Select a cluster value',2, 10, value=3)
-    if Select_cluster=='Optimal clusters (Algo. assited)':
+    if Select_cluster=='Optimal clusters (calculated)':
         st.sidebar.write('The optimal number of clusters found are 5')
 
     # Plot!
@@ -219,7 +219,7 @@ def plot_MS(ana):
     #st.plotly_chart(fig4, use_container_width=True)
     ms_t_SNE_image=Image.open('t-SNE_Meanshift.png')
     st.image(ms_t_SNE_image, width=None)
-    st.write('**Note:** t-SNE plot for Mean Shift is not calculated on the fly as it is computationally expensive. Thus, only the results are presented')
+    st.write('**Note:** t-SNE plot for Mean Shift is not calculated on the fly as it is computationally expensive. Thus, only the results are presented.')
       
 
 
@@ -278,7 +278,7 @@ def plot_res(data):
         # Plot!
         ms_image=Image.open('Meanshift.png')
         st.image(ms_image, width=None)
-        st.write('**Note:** Final result plot for Mean Shift is not calculated on the fly as it is computationally expensive. Thus, only the results are presented')
+        st.write('**Note:** Result plot for Mean Shift is not calculated on the fly as it is computationally expensive. Thus, only the results are presented.')
       
 
 plot_res(Select_Method)
@@ -286,5 +286,5 @@ plot_res(Select_Method)
 #Conclusions and Recommendations
 st.title('Conclusions')
 st.write('**1.** The data was relatively clean with some duplicates and some missing values for Y attribute. The data was cleaned for the analysis.')
-st.write('**2.** K-Means clustering works great if the data clusters are circular, however, geological situations data rarely forms nice circular patterns. GMM modelling uses eliptical shaped cluster/decision boundaries and is, therefore, more flexible providing better clustering results.')
-st.write('**3.** The results from MeanShift shows 5 formations but the results are not convincing.')
+st.write('**2.** K-Means clustering works great if the data clusters are circular, however, geological situations data rarely forms nice circular patterns. GMM modelling uses elliptical shaped cluster/decision boundaries and is, therefore, more flexible providing better clustering results.')
+st.write('**3.** The Mean Shift model predicted 5 formations, but the results are not convincing when plotted.')
