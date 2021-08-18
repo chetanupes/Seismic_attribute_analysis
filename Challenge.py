@@ -70,7 +70,7 @@ df=df[df['Y']!=0]
 df=df.drop_duplicates()
 
 #PLotting clean data
-st.title('Plotting Cleaned Data')
+st.title('Plotting Clean Data')
 st.write('1. Data is cleaned removing duplicates and where attribute Y=0')
 
 fig=px.scatter(df,x=df.X, y=df.Y, labels={'color': 'KMean'}, color_discrete_sequence=['red'])
