@@ -1,6 +1,5 @@
 from functools import total_ordering
 from os import write
-from IPython.core.display import Image
 from numpy.core.numeric import False_
 import pandas as pd
 import numpy as np
@@ -11,10 +10,8 @@ from streamlit_pandas_profiling import st_profile_report
 st.set_page_config(layout="wide")
 
 #Plotting
-import seaborn as sns
 import plotly.express as px
 from sklearn.manifold import TSNE
-import matplotlib.pyplot as plt
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 plt.style.use('seaborn')
@@ -25,7 +22,6 @@ warnings.filterwarnings('ignore', category=DeprecationWarning)
 
 #Widgets libraries
 import ipywidgets as wd
-from IPython.display import display, clear_output
 from ipywidgets import interactive
 from PIL import Image
 
