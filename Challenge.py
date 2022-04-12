@@ -1,6 +1,6 @@
 from functools import total_ordering
 from os import write
-from numpy.core.numeric import False_
+
 import pandas as pd
 
 #Streamlit
