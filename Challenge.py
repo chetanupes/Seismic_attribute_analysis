@@ -1,6 +1,6 @@
 from functools import total_ordering
 from os import write
-
+from IPython.core.display import Image
 import pandas as pd
 import matplotlib.pyplot as plt
 
