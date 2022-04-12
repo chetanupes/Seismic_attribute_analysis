@@ -2,7 +2,7 @@ from functools import total_ordering
 from os import write
 
 import pandas as pd
-from matplotli.pyplot as plt
+from matplotlib.pyplot as plt
 
 #Streamlit
 import streamlit as st
